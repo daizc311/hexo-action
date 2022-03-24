@@ -1,3 +1,7 @@
+# Fork From sma11black/hexo-action
+
+- 在`entrypoint.sh`中临时替换CDN地址
+
 # GitHub Action - Hexo CI/CD 🌱
 
 <a href="https://github.com/marketplace/actions/hexo-action"><img alt="View Action" src="https://img.shields.io/badge/action-marketplace-blue.svg?logo=github&color=orange"></a>
