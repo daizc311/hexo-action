@@ -20,18 +20,18 @@ npm install hexo-deployer-git --save
 if [ "$INPUT_COMMIT_MSG" = "none" ]
 then
     hexo generate
-    sed -i "s|cdn.jsdelivr.net|dreamccc-note.oss-endpoint.com/note/jsdelivrCDN|g" `grep "cdn.jsdelivr.net" -rl ./`
+    sed -i "s|cdn.jsdelivr.net|oss.note.dreamccc.cn/note/jsdelivrCDN|g" `grep "cdn.jsdelivr.net" -rl ./`
     hexo deploy
 elif [ "$INPUT_COMMIT_MSG" = "" ] || [ "$INPUT_COMMIT_MSG" = "default" ]
 then
     # pull original publish repo
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
     hexo generate
-    sed -i "s|cdn.jsdelivr.net|dreamccc-note.oss-endpoint.com/note/jsdelivrCDN|g" `grep "cdn.jsdelivr.net" -rl ./`
+    sed -i "s|cdn.jsdelivr.net|oss.note.dreamccc.cn/note/jsdelivrCDN|g" `grep "cdn.jsdelivr.net" -rl ./`
     hexo deploy
 else
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
-    sed -i "s|cdn.jsdelivr.net|dreamccc-note.oss-endpoint.com/note/jsdelivrCDN|g" `grep "cdn.jsdelivr.net" -rl ./`
+    sed -i "s|cdn.jsdelivr.net|oss.note.dreamccc.cn/note/jsdelivrCDN|g" `grep "cdn.jsdelivr.net" -rl ./`
     hexo generate
     
     hexo deploy -m "$INPUT_COMMIT_MSG"
