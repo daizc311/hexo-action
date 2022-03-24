@@ -29,10 +29,10 @@ TARGET_FILE_NAME_3="jquery.fancybox.min.js"
 ORIGINAL_URL_4="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"
 TARGET_FILE_NAME_4="jquery.justifiedGallery.min.js"
 
-curl -O $ORIGINAL_URL_1 >  ./source/cache/$TARGET_FILE_NAME_1
-curl -O $ORIGINAL_URL_2 >  ./source/cache/$TARGET_FILE_NAME_2
-curl -O $ORIGINAL_URL_3 >  ./source/cache/$TARGET_FILE_NAME_3
-curl -O $ORIGINAL_URL_4 >  ./source/cache/$TARGET_FILE_NAME_4
+curl -o ./source/cache/$TARGET_FILE_NAME_1 $ORIGINAL_URL_1
+curl -o ./source/cache/$TARGET_FILE_NAME_2 $ORIGINAL_URL_2
+curl -o ./source/cache/$TARGET_FILE_NAME_3 $ORIGINAL_URL_3
+curl -o ./source/cache/$TARGET_FILE_NAME_4 $ORIGINAL_URL_4
 
 # 生成静态文件
 hexo generate
