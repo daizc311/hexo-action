@@ -57,9 +57,8 @@ then
     hexo deploy
 else
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
-    sed -i "s|cdn.jsdelivr.net|oss.note.dreamccc.cn/note/jsdelivrCDN|g" `grep "cdn.jsdelivr.net" -rl ./`
     hexo generate
-    
+    sed -i "s|cdn.jsdelivr.net|oss.note.dreamccc.cn/note/jsdelivrCDN|g" `grep "cdn.jsdelivr.net" -rl ./`
     hexo deploy -m "$INPUT_COMMIT_MSG"
 fi
 
